@@ -1,0 +1,6 @@
+endpoints:
+  manjaro-18.x-live-kernel:
+    path: /manjaro-core-18.x/releases/download/REPLACE_RELEASE_NAME/
+    files:
+    - initrd
+    - vmlinuz
