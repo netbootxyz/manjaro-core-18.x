@@ -18,6 +18,9 @@ RUN \
 	/etc/mkinitcpio.conf && \
  echo "**** install kernel ****" && \
  pacman -S --noconfirm \
-	linux53
+	linux53 && \
+ echo "**** paths ****" && \
+ mkdir -p \
+	/buildout
 
 ENTRYPOINT [ "/build.sh" ]
