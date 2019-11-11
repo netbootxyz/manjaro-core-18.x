@@ -11,6 +11,7 @@ RUN \
 	mkinitcpio-nfs-utils && \
  echo "**** patch files ****" && \
  sed -i \
+	-e '/miso_pxe_http_mount_handler/a sed -i "s;launch_interactive_shell;;g" \/hooks\/miso_pxe_http\nlaunch_interactive_shell' \
 	-e 's/${misobasedir}\/${arch}//g' \
 	-e 's/"OK"/"OK\\|302 Found"/g' \
 	/etc/initcpio/hooks/miso_pxe_http && \
