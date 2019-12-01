@@ -10,7 +10,7 @@ env:
     - BRANCH="master"
     - GITHUB_ENDPOINT="netbootxyz/manjaro-core-18.x"
     - DEBIAN_FRONTEND="noninteractive"
-    - BUILD_TYPE="custom_kernel"
+    - BUILD_TYPE="initrd_patch"
 
 branches:
   only:
@@ -18,7 +18,7 @@ branches:
 if: type != pull_request AND tag IS blank
 script:
   - |
-    export EXTERNAL_VERSION=$(curl -sL "http://ftp.free.org/mirrors/repo.manjaro.org/repos/stable/core/x86_64/.overlaypackages" |grep linux53-headers  | grep -Po "(\d+\.)+\d+")
+    export EXTERNAL_VERSION="4.19.69-1-MANJARO"
   - wget https://raw.githubusercontent.com/netbootxyz/build-pipelines/master/build.sh && chmod +x build.sh
   - git config --local user.name $GIT_USERNAME
   - git config --local user.email $GIT_EMAIL
