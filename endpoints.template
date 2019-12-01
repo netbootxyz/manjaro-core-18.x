@@ -1,9 +1,9 @@
 endpoints:
-  manjaro-18.1.0-architect-kernel:
+  manjaro-18.1.0-gui-kernel:
     path: /manjaro-core-18.x/releases/download/REPLACE_RELEASE_NAME/
     files:
     - initrd
     - vmlinuz
     os: manjaro
-    flavor: architect
+    flavor: gui
     version: "18.1.0"

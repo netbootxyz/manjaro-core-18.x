@@ -7,18 +7,18 @@ services:
 
 env:
   global:
-    - BRANCH="master"
+    - BRANCH="gui-18.1.0"
     - GITHUB_ENDPOINT="netbootxyz/manjaro-core-18.x"
     - DEBIAN_FRONTEND="noninteractive"
     - BUILD_TYPE="initrd_patch"
 
 branches:
   only:
-    - 'master'
+    - 'gui-18.1.0'
 if: type != pull_request AND tag IS blank
 script:
   - |
-    export EXTERNAL_VERSION="4.19.69-1-MANJARO"
+    export EXTERNAL_VERSION="5.2.11-1-MANJARO"
   - wget https://raw.githubusercontent.com/netbootxyz/build-pipelines/master/build.sh && chmod +x build.sh
   - git config --local user.name $GIT_USERNAME
   - git config --local user.email $GIT_EMAIL
